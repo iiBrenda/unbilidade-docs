@@ -1,0 +1,400 @@
+/* ============================================
+   UNBILIDADE - NEO-TECHNOLOGICAL THEME
+   ============================================ */
+
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+:root {
+  /* Cores neon - Theme Cyberpunk */
+  --neon-cyan: #00f3ff;
+  --neon-purple: #bf00ff;
+  --neon-pink: #ff00e4;
+  --neon-green: #00ff88;
+  --neon-yellow: #ffd700;
+  --neon-orange: #ff6b00;
+  
+  --glass-bg: rgba(10, 25, 47, 0.7);
+  --glass-border: rgba(0, 243, 255, 0.2);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --card-gradient: linear-gradient(135deg, rgba(0, 243, 255, 0.1) 0%, rgba(191, 0, 255, 0.1) 100%);
+  
+  --md-primary-fg-color: #00f3ff;
+  --md-primary-fg-color--light: #4ddcff;
+  --md-primary-fg-color--dark: #00b8c5;
+  --md-accent-fg-color: #bf00ff;
+  
+  --md-default-bg-color: #0a0a2a;
+  --md-default-fg-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Efeito de fundo com grid holográfico */
+body {
+  background: radial-gradient(circle at 20% 30%, #0a0a2a 0%, #050510 100%);
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Barra de navegação futurista */
+.md-header {
+  background: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.md-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple), var(--neon-cyan));
+  animation: scanline 3s linear infinite;
+}
+
+@keyframes scanline {
+  0% { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.md-header-nav__title {
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Títulos com efeito glitch */
+.md-typeset h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+  0%, 100% { text-shadow: none; }
+  95% { text-shadow: -2px 0 var(--neon-cyan), 2px 0 var(--neon-purple); }
+}
+
+.md-typeset h2 {
+  border-left: 4px solid var(--neon-cyan);
+  padding-left: 1rem;
+  font-weight: 600;
+}
+
+/* Cards tecnológicos */
+.md-typeset .grid.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.md-typeset .card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.md-typeset .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.md-typeset .card:hover::before {
+  left: 100%;
+}
+
+.md-typeset .card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.3);
+}
+
+/* Badges neon */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-right: 0.5rem;
+}
+
+.badge.must {
+  background: linear-gradient(135deg, #ff3366, #ff00e4);
+  box-shadow: 0 0 10px rgba(255, 0, 228, 0.5);
+  color: white;
+}
+
+.badge.should {
+  background: linear-gradient(135deg, #ff6b35, #ffb347);
+  box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+  color: white;
+}
+
+.badge.could {
+  background: linear-gradient(135deg, #00c6fb, #005bea);
+  box-shadow: 0 0 10px rgba(0, 198, 251, 0.5);
+  color: white;
+}
+
+/* Tabelas com estilo holográfico */
+.md-typeset table:not([class]) {
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--glass-bg);
+  backdrop-filter: blur(5px);
+}
+
+.md-typeset table:not([class]) th {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background: rgba(0, 243, 255, 0.1);
+}
+
+/* Progress bar futurista */
+.progress-bar {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  height: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+  height: 100%;
+  border-radius: 20px;
+  position: relative;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Stats cards */
+.stat-card {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hero section com efeito de matriz */
+.hero {
+  background: linear-gradient(135deg, rgba(0, 243, 255, 0.1), rgba(191, 0, 255, 0.1));
+  border: 1px solid var(--glass-border);
+  border-radius: 32px;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.hero::after {
+  content: '01001000 01101111 01110000 01110000 01100101 01110010';
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: rgba(0, 243, 255, 0.3);
+  white-space: pre;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0;
+  animation: fadeInUp 0.8s ease;
+}
+
+/* Timeline tecnológico */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--neon-cyan), var(--neon-purple));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+.timeline-item::before {
+  content: '●';
+  position: absolute;
+  left: -2rem;
+  top: 0;
+  color: var(--neon-cyan);
+  font-size: 1.2rem;
+  text-shadow: 0 0 10px var(--neon-cyan);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Tooltips com glow */
+[data-md-tooltip] {
+  position: relative;
+}
+
+[data-md-tooltip]:hover::after {
+  content: attr(data-md-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--neon-cyan);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+}
+
+/* Logo animado */
+.md-header__button.md-logo img {
+  animation: rotateLogo 8s linear infinite;
+  filter: drop-shadow(0 0 5px var(--neon-cyan));
+}
+
+@keyframes rotateLogo {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Botões neon */
+.btn-neon {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background: transparent;
+  border: 2px solid var(--neon-cyan);
+  border-radius: 40px;
+  color: var(--neon-cyan);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-neon:hover {
+  background: var(--neon-cyan);
+  color: #0a0a2a;
+  box-shadow: 0 0 20px var(--neon-cyan);
+  transform: scale(1.05);
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a2a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-cyan);
+}
+
+/* Animações de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.md-typeset > * {
+  animation: fadeInUp 0.6s ease-out;
+}

@@ -1,0 +1,25 @@
+# Site gerado
+site/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Ambiente virtual
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

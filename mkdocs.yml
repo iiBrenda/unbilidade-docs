@@ -1,0 +1,198 @@
+# Site informações
+site_name: UnBilidade
+site_description: Plataforma inteligente de gestão de agendamentos para clínicas de fisioterapia
+site_author: Equipe Hopper
+
+# Repositório
+repo_url: https://github.com/seu-usuario/unbilidade
+repo_name: GitHub
+
+# Tema Material com configurações avançadas
+theme:
+  name: material
+  language: pt-BR
+  features:
+    # Navegação futurista
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.tracking
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.instant.prefetch
+    - navigation.footer
+    
+    # Busca avançada
+    - search.suggest
+    - search.highlight
+    - search.share
+    
+    # Código e conteúdo
+    - content.code.copy
+    - content.code.annotate
+    - content.tooltips
+    
+    # Header dinâmico
+    - header.autohide
+    
+    # Animações
+    - toc.integrate
+    - toc.follow
+  
+  # Paleta de cores futurista (Cyberpunk/Neon)
+  palette:
+    # Modo escuro (padrão)
+    - scheme: slate
+      primary: cyan
+      accent: purple
+      toggle:
+        icon: material/robot
+        name: Modo Tecnológico
+    # Modo claro (alternativo)
+    - scheme: default
+      primary: deep-purple
+      accent: teal
+      toggle:
+        icon: material/lightbulb-on
+        name: Modo Clássico
+  
+  # Fontes modernas
+  font:
+    text: Poppins
+    code: Fira Code
+  
+  # Ícones
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/robot-industrial
+    admonition:
+      note: fontawesome/solid/circle-info
+      abstract: fontawesome/solid/chart-line
+      info: fontawesome/solid/microchip
+      tip: fontawesome/solid/lightbulb
+      success: fontawesome/solid/check-circle
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/skull
+      danger: fontawesome/solid/radiation
+      bug: fontawesome/solid/bug
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\-\._,:;!?]+'
+      lang: pt
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+  - social:
+      cards_layout_options:
+        background_color: "#00B4D8"
+        font_family: Poppins
+
+# Extensões Markdown
+markdown_extensions:
+  # Formatação avançada
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  
+  # Tabelas e listas
+  - tables
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  
+  # Código
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  
+  # Ícones e emojis
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  
+  # Diagramas
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  
+  # Outros
+  - footnotes
+  - toc:
+      permalink: true
+      permalink_title: Link direto
+      toc_depth: 3
+
+# Navegação principal
+nav:
+  - ✨ Início: index.md
+  - 🚀 Visão Geral: visao-geral.md
+  - 🏗️ Arquitetura: arquitetura.md
+  - 📊 Métricas: metricas.md
+  - 🧪 Testes: testes.md
+  - 📋 Backlog: backlog.md
+  - 👥 Equipe: equipe.md
+  - 📝 Atas:
+    - 📄 Ata 23/04: atas/ata-2025-04-23.md
+    - 📄 Ata 02/05: atas/ata-2025-05-02.md
+    - 📄 Ata 09/05: atas/ata-2025-05-09.md
+
+# Estilos extras
+extra_css:
+  - stylesheets/neo-tech.css
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css
+
+# JavaScript extras
+extra_javascript:
+  - javascripts/neon-effects.js
+  - javascripts/three.js
+  - javascripts/particles.js
+  - javascripts/interactive.js
+
+# Configurações extras
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/seu-usuario/unbilidade
+      name: GitHub
+    - icon: fontawesome/brands/jira
+      link: https://seu-jira.atlassian.net
+      name: Jira
+    - icon: fontawesome/solid/chart-line
+      link: /metricas
+      name: Métricas
+  
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+  
+  generator: false
+  version:
+    provider: mike

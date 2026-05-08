@@ -1,206 +1,104 @@
 <style>
   .tech-header {
-    background: linear-gradient(135deg, #00897B 0%, #1A237E 100%);
+    background: linear-gradient(135deg, #4CAF50 0%, #2196F3 100%);
     border-radius: 24px;
     padding: 2rem;
     margin-bottom: 2rem;
     color: white;
-    position: relative;
-    overflow: hidden;
-  }
-  .tech-header::before {
-    content: '📊';
-    position: absolute;
-    font-size: 8rem;
-    opacity: 0.05;
-    bottom: -20px;
-    right: 20px;
-  }
-  .gqm-flow {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    margin: 2rem 0;
-  }
-  .gqm-card {
-    flex: 1;
     text-align: center;
-    padding: 1.5rem;
-    border-radius: 16px;
-    background: linear-gradient(135deg, #00897b20 0%, #4db6ac20 100%);
   }
   .dashboard-card {
-    background: var(--md-default-bg-color);
-    border-radius: 20px;
+    background: white;
+    border-radius: 16px;
     padding: 1.5rem;
     margin: 1rem 0;
-    border: 1px solid var(--md-default-fg-color--lightest);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
   .metric-value {
     font-size: 2rem;
     font-weight: bold;
-    color: var(--md-primary-fg-color);
+    color: #4CAF50;
   }
-  .status-green {
-    color: #4caf50;
-    font-weight: bold;
-  }
-  .status-yellow {
-    color: #ff9800;
-    font-weight: bold;
-  }
-  .status-red {
-    color: #f44336;
-    font-weight: bold;
-  }
-  .badge-pass {
-    background: #4caf50;
-    color: white;
-    border-radius: 20px;
-    padding: 0.2rem 0.6rem;
-    font-size: 0.7rem;
-  }
-  .badge-fail {
-    background: #f44336;
-    color: white;
-    border-radius: 20px;
-    padding: 0.2rem 0.6rem;
-    font-size: 0.7rem;
-  }
+  .status-green { color: #4CAF50; font-weight: bold; }
+  .status-yellow { color: #FF9800; font-weight: bold; }
+  .status-red { color: #f44336; font-weight: bold; }
   .progress-bar {
-    background: var(--md-default-fg-color--lightest);
+    background: #e0e0e0;
     border-radius: 10px;
     height: 8px;
-    overflow: hidden;
-    margin: 0.5rem 0;
   }
   .progress-fill {
-    background: var(--md-primary-fg-color);
+    background: #4CAF50;
     height: 100%;
     border-radius: 10px;
-    width: 0%;
-    transition: width 1s ease;
   }
 </style>
 
 <div class="tech-header">
   <h1 style="color: white;">📊 Métricas e Medições</h1>
-  <p>Goal-Question-Metric (GQM) Framework</p>
+  <p>Framework GQM (Goal-Question-Metric)</p>
 </div>
 
-## 🎯 GQM Framework
+## 🎯 Objetivo
 
-<div class="gqm-flow">
-  <div class="gqm-card">
-    <div style="font-size: 2rem;">🎯</div>
-    <h3>Goal</h3>
-    <small>O que queremos alcançar?</small>
-  </div>
-  <div class="gqm-card">
-    <div style="font-size: 2rem;">❓</div>
-    <h3>Question</h3>
-    <small>O que precisamos saber?</small>
-  </div>
-  <div class="gqm-card">
-    <div style="font-size: 2rem;">📈</div>
-    <h3>Metric</h3>
-    <small>Como medimos?</small>
-  </div>
-</div>
+> Identificar situações que indicam necessidade de replanejamento durante o desenvolvimento, garantindo entregas no prazo.
 
-## 🎯 Objetivo (Goal)
-
-> **Identificar proativamente sinais de desvio no planejamento e na execução do desenvolvimento do UnBilidade**, garantindo a entrega contínua de valor dentro do cronograma.
-
-## ❓ Perguntas (Questions)
+## ❓ Perguntas
 
 | ID | Pergunta |
 |:---|:---|
-| Q1 | A equipe está participando de forma balanceada? |
+| Q1 | A participação da equipe é balanceada? |
 | Q2 | A qualidade das entregas está dentro do esperado? |
 | Q3 | A distribuição de tarefas está equilibrada? |
 | Q4 | O entregue corresponde ao planejado? |
 
-## 📈 Dashboard de Métricas (Sprint 2)
+## 📈 Dashboard - Sprint 2
 
 <div class="dashboard-card">
-  <h3>📊 Visão Geral da Sprint</h3>
-  <table>
-    <tr>
-      <td><strong>Sprint</strong></td>
-      <td colspan="3">Sprint 2 - MVP e Arquitetura (02/05 a 16/05)</td>
-    </tr>
-    <tr>
-      <td><strong>Progresso</strong></td>
-      <td colspan="3">
-        <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
-        40% concluído
-      </td>
-    </tr>
-  </table>
+  <h3>📊 Visão Geral</h3>
+  <p><strong>Sprint:</strong> 02/05 a 16/05 - MVP e Arquitetura</p>
+  <p><strong>Progresso:</strong> 40%</p>
+  <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
 </div>
 
-### M1 - Participação da Equipe (Q1)
+### M1 - Participação (Q1)
 
 | Métrica | Valor | Status |
 |:---|:---|:---|
-| Taxa de presença em reuniões | 92% | <span class="status-green">✅ Saudável</span> |
-| Cumprimento de tarefas | 85% | <span class="status-green">✅ Saudável</span> |
+| Presença em reuniões | 92% | ✅ Saudável |
+| Cumprimento de tarefas | 85% | ✅ Saudável |
 
-### M2 - Qualidade das Entregas (Q2)
+### M2 - Qualidade (Q2)
 
 | Métrica | Valor | Status |
 |:---|:---|:---|
-| Taxa de aceitação dos testes | 94% | <span class="status-green">✅ Saudável</span> |
-| Débito técnico por PR | 2.3 | <span class="status-green">✅ Baixo</span> |
+| Testes aprovados | 94% | ✅ Saudável |
+| Débito técnico/PR | 2.3 | ✅ Baixo |
 
-### M3 - Distribuição de Trabalho (Q3)
+### M3 - Distribuição (Q3)
 
-<div style="display: flex; gap: 1rem; margin: 1rem 0;">
-  <div style="flex:1; text-align:center;">
-    <div class="metric-value">43</div>
-    <small>Commits Front-end</small>
-  </div>
-  <div style="flex:1; text-align:center;">
-    <div class="metric-value">38</div>
-    <small>Commits Back-end</small>
-  </div>
-  <div style="flex:1; text-align:center;">
-    <div class="metric-value">12</div>
-    <small>Commits DevOps</small>
-  </div>
-  <div style="flex:1; text-align:center;">
-    <div class="metric-value">8</div>
-    <small>Commits Doc</small>
-  </div>
-</div>
+| Métrica | Quantidade |
+|:---|:---|
+| Commits Front-end | 43 |
+| Commits Back-end | 38 |
+| Commits DevOps | 12 |
+| Commits Documentação | 8 |
 
 ### M4 - Alinhamento (Q4)
 
 | Métrica | Valor | Status |
 |:---|:---|:---|
-| Velocidade da equipe | 32/40 story points | <span class="status-yellow">⚠️ 80%</span> |
-| Histórias não concluídas | 2 | <span class="status-yellow">⚠️ Monitorar</span> |
+| Velocidade | 32/40 story points | ⚠️ 80% |
+| Histórias não concluídas | 2 | ⚠️ Monitorar |
 
 ## 🔔 Gatilhos de Replanejamento
 
-<div class="grid cards" markdown>
+| Nível | Condições |
+|:---|:---|
+| 🔴 **Alto Risco** | Testes < 80% por 2 sprints / Escopo entregue < 70% / Membro com >40% de atraso |
+| 🟡 **Médio Risco** | Burndown com desvio por 3 dias / Débito técnico >5 por PR / Presença < 75% |
 
--   ### 🔴 Alto Risco - Ação Imediata
-    
-    - Testes < 80% por 2 sprints
-    - Escopo entregue < 70%
-    - Membro com >40% de atraso
-    
--   ### 🟡 Médio Risco - Monitorar
-    
-    - Burndown com desvio por 3 dias
-    - Débito técnico >5/PR
-    - Presença < 75%
-
-</div>
-
-## 📊 Burndown Chart - Sprint 2
+## 📊 Gráfico de Burndown
 
 ```mermaid
 graph LR
@@ -210,16 +108,11 @@ graph LR
         D3 --> D4["Dia 4<br>28pts"]
         D4 --> D5["Dia 5<br>24pts"]
     end
-    
-    style D1 fill:#00897b,color:white
-    style D2 fill:#00897b,color:white
-    style D3 fill:#4db6ac,color:white
-    style D4 fill:#ff9800,color:white
-    style D5 fill:#ff9800,color:white
-📋 Relatório de Coleta de Dados
-Fonte	Dados Coletados	Periodicidade
-GitHub	Commits, PRs, revisões	Contínua
-Jira	Story points, tarefas, burndown	Diária
-Vitest/Supertest	Cobertura, sucesso testes	A cada push
-Planilha	Presenças, participação	Semanal
-🎯 Próxima Sprint: Meta de 90% de entrega do escopo e 85%+ de cobertura de testes
+📋 Coleta de Dados
+Fonte	Dados	Periodicidade
+GitHub	Commits, PRs	Contínua
+Jira	Story points	Diária
+Vitest	Cobertura de testes	A cada push
+Planilha	Presenças	Semanal
+🎯 Meta Sprint 3: 90% de entrega do escopo e 85%+ de cobertura de testes
+```

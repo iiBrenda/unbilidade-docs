@@ -2,75 +2,82 @@
 site_name: UnBilidade
 site_description: Plataforma inteligente de gestão de agendamentos para clínicas de fisioterapia
 site_author: Equipe Hopper
+site_url: https://iiBrenda.github.io/unbilidade-docs/
 
 # Repositório
-repo_url: https://github.com/seu-usuario/unbilidade
+site_name: UnBilidade
+site_url: https://iiBrenda.github.io/unbilidade-docs/  # ← ADICIONE ESTA LINHA
 repo_name: GitHub
 
-# Tema Material com configurações avançadas
+# Tema Material - Cores de Clínica de Fisioterapia
 theme:
   name: material
   language: pt-BR
   features:
-    # Navegação futurista
+    # Navegação suave
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
-    - navigation.expand
     - navigation.top
     - navigation.tracking
     - navigation.instant
     - navigation.instant.progress
-    - navigation.instant.prefetch
     - navigation.footer
     
-    # Busca avançada
+    # Busca
     - search.suggest
     - search.highlight
     - search.share
     
-    # Código e conteúdo
+    # Conteúdo
     - content.code.copy
     - content.code.annotate
     - content.tooltips
     
-    # Header dinâmico
+    # Header
     - header.autohide
     
     # Animações
     - toc.integrate
     - toc.follow
   
-  # Paleta de cores futurista (Cyberpunk/Neon)
+  # PALETA DE CORES - CLÍNICA DE FISIOTERAPIA 💚
   palette:
-    # Modo escuro (padrão)
-    - scheme: slate
-      primary: cyan
-      accent: purple
-      toggle:
-        icon: material/robot
-        name: Modo Tecnológico
-    # Modo claro (alternativo)
+    # Modo claro (padrão - cores suaves de clínica)
     - scheme: default
-      primary: deep-purple
-      accent: teal
+      primary: teal
+      accent: light-blue
       toggle:
-        icon: material/lightbulb-on
-        name: Modo Clássico
+        icon: material/weather-sunny
+        name: Modo Claro
+    # Modo claro alternativo (mais suave)
+    - scheme: default
+      primary: light-green
+      accent: cyan
+      toggle:
+        icon: material/leaf
+        name: Modo Clínica
+    # Modo escuro suave
+    - scheme: slate
+      primary: blue-grey
+      accent: light-green
+      toggle:
+        icon: material/weather-night
+        name: Modo Escuro
   
-  # Fontes modernas
+  # Fontes amigáveis e legíveis
   font:
     text: Poppins
     code: Fira Code
   
-  # Ícones
+  # Ícones temáticos
   icon:
     repo: fontawesome/brands/github
-    logo: material/robot-industrial
+    logo: material/hospital-building
     admonition:
       note: fontawesome/solid/circle-info
       abstract: fontawesome/solid/chart-line
-      info: fontawesome/solid/microchip
+      info: fontawesome/solid/heart-pulse
       tip: fontawesome/solid/lightbulb
       success: fontawesome/solid/check-circle
       question: fontawesome/solid/circle-question
@@ -83,25 +90,10 @@ theme:
 
 # Plugins
 plugins:
-  - search:
-      separator: '[\s\-\._,:;!?]+'
-      lang: pt
-  - glightbox:
-      touchNavigation: true
-      loop: false
-      effect: zoom
-      width: 100%
-      height: auto
-      zoomable: true
-      draggable: true
-  - social:
-      cards_layout_options:
-        background_color: "#00B4D8"
-        font_family: Poppins
+  - search
 
 # Extensões Markdown
 markdown_extensions:
-  # Formatação avançada
   - admonition
   - pymdownx.details
   - pymdownx.superfences:
@@ -109,41 +101,19 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.critic
-  - pymdownx.caret
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.tilde
-  
-  # Tabelas e listas
   - tables
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
       clickable_checkbox: true
-  
-  # Código
   - pymdownx.highlight:
       anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  
-  # Ícones e emojis
   - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  
-  # Diagramas
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  
-  # Outros
   - footnotes
   - toc:
       permalink: true
@@ -152,47 +122,35 @@ markdown_extensions:
 
 # Navegação principal
 nav:
-  - ✨ Início: index.md
+  - 🏠 Início: index.md
   - 🚀 Visão Geral: visao-geral.md
   - 🏗️ Arquitetura: arquitetura.md
   - 📊 Métricas: metricas.md
   - 🧪 Testes: testes.md
-  - 📋 Backlog: backlog.md
-  - 👥 Equipe: equipe.md
+  - 📋 Backlog: backlog.md 
   - 📝 Atas:
     - 📄 Ata 23/04: atas/ata-2025-04-23.md
     - 📄 Ata 02/05: atas/ata-2025-05-02.md
-    - 📄 Ata 09/05: atas/ata-2025-05-09.md
 
 # Estilos extras
 extra_css:
-  - stylesheets/neo-tech.css
-  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css
+  - stylesheets/clinica-theme.css
 
 # JavaScript extras
 extra_javascript:
-  - javascripts/neon-effects.js
-  - javascripts/three.js
-  - javascripts/particles.js
-  - javascripts/interactive.js
+  - javascripts/clinica-effects.js
 
 # Configurações extras
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/seu-usuario/unbilidade
+      link: https://github.com/SEU-USUARIO/unbilidade-docs
       name: GitHub
     - icon: fontawesome/brands/jira
       link: https://seu-jira.atlassian.net
       name: Jira
-    - icon: fontawesome/solid/chart-line
-      link: /metricas
-      name: Métricas
-  
-  analytics:
-    provider: google
-    property: G-XXXXXXXXXX
+    - icon: fontawesome/solid/heart-pulse
+      link: /
+      name: Saúde e Bem-estar
   
   generator: false
-  version:
-    provider: mike

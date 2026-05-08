@@ -1,0 +1,163 @@
+/* Animações e transições */
+:root {
+  --md-primary-fg-color: #00897B;
+  --md-primary-fg-color--light: #4DB6AC;
+  --md-primary-fg-color--dark: #00695C;
+  --md-accent-fg-color: #00BCD4;
+}
+
+/* Cards de destaque */
+.md-typeset .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.md-typeset .card {
+  background: var(--md-default-bg-color);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.md-typeset .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Badges e tags */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.badge.must {
+  background: #E53935;
+  color: white;
+}
+
+.badge.should {
+  background: #FB8C00;
+  color: white;
+}
+
+.badge.could {
+  background: #43A047;
+  color: white;
+}
+
+/* Progress bar */
+.progress-bar {
+  background: var(--md-default-fg-color--lightest);
+  border-radius: 10px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: var(--md-primary-fg-color);
+  height: 100%;
+  border-radius: 10px;
+  width: 0%;
+  transition: width 1s ease;
+}
+
+/* Tabelas melhoradas */
+.md-typeset table:not([class]) {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--md-primary-fg-color);
+  color: white;
+  font-weight: 600;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--md-primary-fg-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.2rem;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--md-primary-fg-color);
+  border: 2px solid var(--md-default-bg-color);
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 2rem 0;
+  background: linear-gradient(135deg, #00897B 0%, #00695C 100%);
+  border-radius: 24px;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.hero h1 {
+  color: white !important;
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Stats cards */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--md-default-bg-color);
+  border-radius: 16px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--md-primary-fg-color);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--md-default-fg-color--light);
+}
